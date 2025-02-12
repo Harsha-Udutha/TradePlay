@@ -1,0 +1,113 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+}
+
+.logo:hover {
+    text-decoration: underline;
+}
+
+.support-btn {
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.support-btn:hover {
+    background-color: #222;
+}
+
+/* Sign-In Form Container */
+.signin-container {
+    padding-top: 70px; /* Give space for the navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Sign-In Form */
+.signin-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #222;
+}
+
+.otp-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.otp-btn:hover {
+    background-color: #222;
+}
+
+/* Redirect Links */
+.login-redirect, .signup-redirect {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-redirect a, .signup-redirect a {
+    color: #191a1b;
+}
+
+.login-redirect a:hover, .signup-redirect a:hover {
+    text-decoration: underline;
+}

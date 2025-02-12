@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePlay - Sign In / Register</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- TradePlay Text (clickable) -->
+        <div class="logo" onclick="goToLanding()">TradePlay</div>
+
+        <!-- Support Button (top-right) -->
+        <button class="support-btn" onclick="goToSupport()">Support</button>
+    </nav>
+
+    <div class="signin-container">
+        <div class="signin-form">
+            <h2>Welcome to TradePlay</h2>
+            
+            <!-- Signup Form -->
+            <div id="signup-form">
+                <h3>Create an Account</h3>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input type="text" id="reg-phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-username">Username</label>
+                        <input type="text" id="reg-username" name="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" name="password" placeholder="Create a password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Sign Up</button>
+                    </div>
+                </form>
+                <p class="login-redirect">Already have an account? <a href="#" onclick="showLoginForm()">Log In</a></p>
+            </div>
+
+            <!-- Login Form (initially hidden) -->
+            <div id="login-form" style="display: none;">
+                <h3>Login</h3>
+                <form id="login-form">  <!-- ✅ Fixed ID to match signin.js -->
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Log In</button>
+                    </div>
+                </form>
+                <p class="signup-redirect">Don't have an account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="signin.js"></script>
+</body>
+</html>

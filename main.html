@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePlay - Main</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="logo" onclick="goToLanding()">TradePlay</div>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search products...">
+                <button onclick="searchProducts()">
+                    <img src="search_icon.jpg" alt="Search">
+                </button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button onclick="goToChats()">Chats</button>
+            <button onclick="goToForum()">Forums</button>
+            <button onclick="goToSignIn()">Sign In</button>
+            <button onclick="goToSupport()">Support</button>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <aside class="filters">
+        <h3>Filters</h3>
+        <div class="filter">
+            <label for="location">Location/Radius</label>
+            <input type="text" id="location" placeholder="Enter location">
+        </div>
+        <div class="filter">
+            <label for="date-listed">Date Listed:</label>
+            <select id="date-listed">
+                <option value="today">Today</option>
+                <option value="last-week">Last Week</option>
+                <option value="last-month">Last Month</option>
+            </select>
+        </div>
+        <div class="filter">
+            <label for="category">Categories</label>
+            <select id="category">
+                <option value="playstation">PlayStation</option>
+                <option value="xbox">Xbox</option>
+                <option value="nintendo">Nintendo</option>
+                <option value="kids-games">Kids Games</option>
+                <option value="devices">Devices</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+    </aside>
+
+    <!-- Main Content: Post Listings -->
+    <main class="listings">
+        <div class="listing">
+            <img src="image-placeholder.jpg" alt="Post Image">
+            <div class="post-info">
+                <h4>PlayStation 5 for Sale</h4>
+                <p class="price">$499</p>
+                <p>Description of the post...</p>
+                <div class="post-actions">
+                    <button>Like</button>
+                    <button>Save</button>
+                    <button class="chat-btn" data-seller-id="123">Chat</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const chatButtons = document.querySelectorAll(".chat-btn");
+    
+            chatButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const sellerId = this.getAttribute("data-seller-id");
+                    window.location.href = `chats.html?seller_id=${sellerId}`;
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TradePlay. Exchange, Connect, and Watch your Gaming World Expand.</p>
+    </footer>
+
+    <script>
+        function goToLanding() {
+            window.location.href = "index.html";
+        }
+
+        function goToChats() {
+            window.location.href = "chats.html";
+        }
+
+        function goToForum() {
+            window.location.href = "forum.html";
+        }
+
+        function goToSignIn() {
+            window.location.href = "signin.html";
+        }
+
+        function goToSupport() {
+            window.location.href = "support.html";
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search').value;
+            alert('Searching for: ' + query);
+        }
+    </script>
+</body>
+</html>
