@@ -1,0 +1,57 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: black;
+    overflow: hidden;
+}
+
+/* Landing Page Background Video */
+.landing-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url('land.mp4') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered Content */
+.content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    border-radius: 10px;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Caption Text Style */
+p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Button Style */
+.connect-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #474642;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.connect-btn:hover {
+    background-color: #d1cbc4ea;
+}

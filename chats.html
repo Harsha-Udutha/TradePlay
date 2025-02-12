@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePlay - Chats</title>
+    <link rel="stylesheet" href="chats.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo" onclick="goToMain()">TradePlay</div>
+        <div class="navbar-buttons">
+            <button onclick="goToForum()">Forums</button>
+            <button onclick="goToSupport()">Support</button>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <h3>Chats</h3>
+            <div class="chat-list">
+                <div class="chat-item" onclick="openChat('User 1')">User 1</div>
+                <div class="chat-item" onclick="openChat('User 2')">User 2</div>
+                <div class="chat-item" onclick="openChat('User 3')">User 3</div>
+            </div>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header">Select a chat</div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat(chatName) {
+            document.querySelector('.chat-header').innerText = chatName;
+            document.querySelector('.chat-messages').innerHTML = `<p>Chat started with ${chatName}</p>`;
+        }
+
+        function goToMain() {
+            window.location.href = "main.html";
+        }
+
+        function goToForum() {
+            window.location.href = "forum.html";
+        }
+
+        function goToSupport() {
+            window.location.href = "support.html";
+        }
+    </script>
+
+</body>
+</html>

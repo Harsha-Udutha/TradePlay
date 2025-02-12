@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forums Page</title>
+    <link rel="stylesheet" href="forum.css">
+    <script>
+        function redirectToMain() {
+            window.location.href = 'index.html';
+        }
+        function openChat(chatName) {
+            document.querySelector('.chat-header').innerText = chatName;
+            document.querySelector('.chat-messages').innerHTML = `<p>Welcome to ${chatName} chat!</p>`;
+            document.querySelector('.chat-window').style.display = 'flex';
+        }
+        function createGroup() {
+            const groupName = prompt("Enter group name:");
+            if (groupName) {
+                const groupItem = document.createElement("div");
+                groupItem.className = "chat-item";
+                groupItem.innerText = groupName;
+                groupItem.onclick = () => openChat(groupName);
+                document.querySelector('.chat-list').appendChild(groupItem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo" onclick="redirectToMain()">TradePlay</span>
+        </div>
+        <div class="nav-center">
+            <input type="text" placeholder="Search users/groups..." class="search-bar">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="nav-right">
+            <button class="chat-btn">Chats</button>
+            <button onclick="goToSupport()">Support</button>
+        </div>
+    </nav>
+
+    <!-- Chat Section -->
+    <div class="chat-container">
+        <!-- Left Sidebar - Chat List -->
+        <div class="chat-sidebar">
+            <h3>Chats</h3>
+            <button class="group-btn" onclick="createGroup()">Groups+</button>
+            <div class="chat-list">
+                <div class="chat-item" onclick="openChat('User 1')">User 1</div>
+                <div class="chat-item" onclick="openChat('User 2')">User 2</div>
+                <div class="chat-item" onclick="openChat('Group 1')">Group 1</div>
+                <div class="chat-item" onclick="openChat('Group 2')">Group 2</div>
+            </div>
+        </div>
+
+        <!-- Right Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">Select a chat</div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
