@@ -3,29 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradePlay</title>
+    <meta name="description" content="TradePlay - Exchange, Connect, and Watch Your Gaming World Expand">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="TradePlay">
+    <meta property="og:description" content="Exchange, Connect, and Watch Your Gaming World Expand">
+    <meta property="og:type" content="website">
+    
+    <title>TradePlay - Gaming Exchange Platform</title>
     <link rel="stylesheet" href="landing.css">
+    
+    <!-- Preload video for better performance -->
+    <link rel="preload" as="video" href="Tradeplaybg.mp4" type="video/mp4">
+    
+    <!-- Add favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <div class="landing-container">
-        <!-- Video Background -->
-        <video autoplay loop muted playsinline class="bg-video">
+    <div class="landing-container" role="main">
+        <!-- Video Background with aria-hidden since it's decorative -->
+        <video 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            class="bg-video"
+            aria-hidden="true"
+            poster="video-poster.jpg"
+        >
             <source src="Tradeplaybg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <!-- Provide a fallback background for browsers that don't support video -->
+            <div class="video-fallback"></div>
         </video>
 
         <!-- Overlay Content -->
         <div class="content">
-            <h1>TRADEPLAY</h1>
-            <p>Exchange, Connect, and Watch Your Gaming World Expand.</p>
-            <button class="connect-btn" onclick="goToMain()">Enter TradePlay</button>
+            <h1 class="site-title">TRADEPLAY</h1>
+            <p class="site-description">Exchange, Connect, and Watch Your Gaming World Expand.</p>
+            <button 
+                class="connect-btn" 
+                onclick="goToMain()"
+                aria-label="Enter TradePlay Platform"
+            >
+                Enter TradePlay
+            </button>
         </div>
     </div>
 
     <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading state management for the video
+            const video = document.querySelector('.bg-video');
+            if (video) {
+                video.addEventListener('loadeddata', function() {
+                    document.body.classList.add('video-loaded');
+                });
+            }
+        });
+
         function goToMain() {
-            window.location.href = "main.html";
+            // Add transition effect before navigation
+            document.body.classList.add('transitioning');
+            setTimeout(() => {
+                window.location.href = "main.html";
+            }, 300); // Adjust timing based on your transition duration
         }
+
+        // Handle errors for video loading
+        const video = document.querySelector('.bg-video');
+        video.addEventListener('error', function() {
+            document.body.classList.add('video-error');
+        });
     </script>
 </body>
 </html>
